@@ -1,6 +1,6 @@
 [package]
 name = "single_login"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["mapkkkk <epyc7742@126.com>"]
 edition = "2021"
 
@@ -15,17 +15,3 @@ lto = "fat"
 opt-level = 'z'
 panic = 'abort'
 strip = true
-
-[package.metadata.deb]
-depends = "$auto"
-section = "utility"
-priority = "optional"
-assets = [
-  ['target/release/single_login', 'usr/bin/single_login', '755'],
-  ['account.conf', 'etc/account.conf', '644'],
-]
-conf-files = [
-  '/etc/account.conf',
-]
-maintainer-scripts = 'debian/'
-systemd-units = { enable = true }
