@@ -111,11 +111,11 @@ fn main() {
             match login(&username, &password) {
                 Ok(_) => {
                     println!("[Info] Login OK");
-                    thread::sleep(Duration::from_secs(2));
+                    thread::sleep(Duration::from_secs(10));
                 }
                 Err(e) => {
                     println!("[Err] Login Fail {}", e);
-                    thread::sleep(Duration::from_secs(1));
+                    thread::sleep(Duration::from_secs(5));
                 }
             }
         } else {
