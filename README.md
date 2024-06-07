@@ -57,3 +57,34 @@ cross build --release --target mips-unknown-linux-musl
 mips-linux-gnu-strip ./target/mips-unknown-linux-musl/release/single_login
 ```
 
+### Systemctl设置自启动
+
+```bash
+sudo nano /lib/systemd/system/single_login.service
+# 然后粘贴下面的内容并保存
+```
+
+```bash
+# [Service]的ExecStart里的user_name请改为自己的用户名, your_cfg.cfg是配置文件名
+[Unit]
+Description=single_login
+After=network.target syslog.target
+Wants=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+ExecStartPre=/bin/sleep 20
+DynamicUser=yes
+ExecStart=/home/user_name/single_login/single_login /home/user_name/single_login/your_cfg.cfg
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```bash
+sudo systemctl enable single_login
+sudo systemctl start single_login
+sudo systemctl status single_login
+```
