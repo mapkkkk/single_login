@@ -88,10 +88,10 @@ pub fn get_time() -> bool {
     let now = Utc::now();
     let hour = now.hour();
     let mut is_net_open = true;
-    if hour > 16 && hour < 23 {
+    if hour > 15 && hour < 23 {
         is_net_open = false;
     }
-    // println!("{}",is_net_open,);
+    // println!("{}-{}", hour, is_net_open);
     return is_net_open;
 }
 
@@ -118,6 +118,7 @@ fn main() {
                     thread::sleep(Duration::from_secs(5));
                 }
             }
+            // thread::sleep(Duration::from_secs(60));
         } else {
             thread::sleep(Duration::from_secs(60));
         }
