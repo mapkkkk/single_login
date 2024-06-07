@@ -35,9 +35,11 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 wget https://static.rust-lang.org/rustup/dist/aarch64-unknown-linux-gnu/rustup-init
 chmod 700 rustup-init
 ./rustup-init
-# git clone本仓库
+# git clone本仓库, 换rust镜像源
 git clone https://github.com/mapkkkk/single_login.git
 cd single_login
+echo 'export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup' >> ~/.bash_profile
+echo 'export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup' >> ~/.bash_profile
 ```
 
 ### 编译
