@@ -57,7 +57,9 @@ cross build --release --target mips-unknown-linux-musl
 mips-linux-gnu-strip ./target/mips-unknown-linux-musl/release/single_login
 ```
 
-### Systemctl设置自启动
+------
+
+## Systemctl设置自启动
 
 ```bash
 sudo nano /lib/systemd/system/single_login.service
@@ -88,3 +90,4 @@ sudo systemctl enable single_login
 sudo systemctl start single_login
 sudo systemctl status single_login
 ```
+
