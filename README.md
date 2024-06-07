@@ -35,6 +35,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 wget https://static.rust-lang.org/rustup/dist/aarch64-unknown-linux-gnu/rustup-init
 chmod 700 rustup-init
 ./rustup-init
+# git clone本仓库
+git clone https://github.com/mapkkkk/single_login.git
+cd single_login
 ```
 
 ### 编译
