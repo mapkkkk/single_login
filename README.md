@@ -76,9 +76,8 @@ Wants=network.target
 [Service]
 Type=simple
 Restart=always
-RestartSec=10
+RestartSec=86400
 ExecStartPre=/bin/sleep 20
-DynamicUser=yes
 ExecStart=/home/user_name/single_login/single_login /home/user_name/single_login/your_cfg.cfg
 
 [Install]
