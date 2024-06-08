@@ -120,6 +120,7 @@ fn main() {
             }
             // thread::sleep(Duration::from_secs(60));
         } else {
+            println!("[Warn] Not Work Time");
             thread::sleep(Duration::from_secs(60));
         }
     }
