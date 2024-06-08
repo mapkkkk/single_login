@@ -2,7 +2,6 @@ use num_bigint::BigUint;
 use std::fs;
 use std::time::Duration;
 use std::{io, thread};
-extern crate chrono;
 use chrono::{Timelike, Utc};
 
 pub fn encrypt_pass(password: String) -> String {
@@ -91,7 +90,7 @@ pub fn get_time() -> bool {
     if hour > 15 && hour < 23 {
         is_net_open = false;
     }
-    // println!("{}-{}", hour, is_net_open);
+    // println!("utc hour: {} work status: {}", hour, is_net_open);
     return is_net_open;
 }
 
@@ -118,7 +117,7 @@ fn main() {
                     thread::sleep(Duration::from_secs(5));
                 }
             }
-            // thread::sleep(Duration::from_secs(60));
+            // thread::sleep(Duration::from_secs(5));
         } else {
             println!("[Warn] Not Work Time");
             thread::sleep(Duration::from_secs(60));
