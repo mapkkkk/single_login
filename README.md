@@ -85,8 +85,11 @@ WantedBy=multi-user.target
 ```
 
 ```bash
+# 设置自启动
 sudo systemctl enable single_login
+# 启动
 sudo systemctl start single_login
+# 查看运行状态(请在启动后过一会再查看)
 sudo systemctl status single_login
 ```
 
