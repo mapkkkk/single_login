@@ -90,7 +90,7 @@ pub fn get_time() -> bool {
     if hour > 15 && hour < 23 {
         is_net_open = false;
     }
-    println!("[INFO] UTC Hour: {} Work Status: {}", hour, is_net_open);
+    println!("[Info] UTC Hour: {} Work Status: {}", hour, is_net_open);
     return is_net_open;
 }
 
