@@ -13,8 +13,8 @@
 ### 运行
 
 ```bash
-./single_login ./your_config
-# your_config是配置文件名
+./single_login ./account.cfg
+# account.cfg是配置文件名
 ```
 
 ### 配置文件格式应该如下
@@ -71,7 +71,7 @@ sudo nano /lib/systemd/system/single_login.service
 ```
 
 ```bash
-# [Service]的ExecStart里的user_name请改为自己的用户名, your_cfg.cfg是配置文件名
+# [Service]的ExecStart里的user_name请改为自己的用户名, account.cfg是配置文件名
 [Unit]
 Description=single_login
 After=network.target syslog.target
@@ -82,7 +82,7 @@ Type=simple
 Restart=always
 RestartSec=86400
 ExecStartPre=/bin/sleep 20
-ExecStart=~/single_login/single_login ~/single_login/your_cfg.cfg
+ExecStart=~/single_login/single_login ~/single_login/account.cfg
 
 [Install]
 WantedBy=multi-user.target
@@ -124,3 +124,6 @@ exit
 C:\Users\rhett\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 ```
 
+------
+
+`Mac`用户请自行`brew install`解决，本人无`Mac`，对`Mac`不熟
