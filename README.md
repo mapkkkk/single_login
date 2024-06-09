@@ -53,7 +53,7 @@ strip ./target/release/single_login
 strip .\target\release\single_login.exe
 ```
 
-### 交叉编译
+### 交叉编译(以mips为例)
 
 ```bash
 cargo install cross
@@ -63,7 +63,7 @@ mips-linux-gnu-strip ./target/mips-unknown-linux-musl/release/single_login
 
 ------
 
-## Systemctl设置自启动
+## Linux下设置Systemctl设置自启动
 
 ```bash
 sudo nano /lib/systemd/system/single_login.service
