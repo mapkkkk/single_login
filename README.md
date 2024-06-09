@@ -78,7 +78,7 @@ Type=simple
 Restart=always
 RestartSec=86400
 ExecStartPre=/bin/sleep 20
-ExecStart=/home/user_name/single_login/single_login /home/user_name/single_login/your_cfg.cfg
+ExecStart=~/single_login/single_login ~/single_login/your_cfg.cfg
 
 [Install]
 WantedBy=multi-user.target
