@@ -8,7 +8,7 @@
 
 ## 使用预构建的二进制文件
 
-现在提供amd64的Windows和Linux预构建文件、以及aarch64的预构建文件
+现在提供amd64的Windows和Linux预构建文件、以及aarch64的Linux预构建文件
 
 ### 运行
 
