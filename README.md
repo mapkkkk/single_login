@@ -8,7 +8,7 @@
 
 ## 使用预构建的二进制文件
 
-现在提供amd64的Windows和Linux预构建文件、以及aarch64的Linux预构建文件，请在release里下载
+现在提供`amd64`的`Windows`和`Linux`预构建文件、以及`aarch64`的`Linux`预构建文件，请在`release`里下载
 
 ### 运行
 
@@ -53,12 +53,12 @@ strip ./target/release/single_login
 strip .\target\release\single_login.exe
 ```
 
-### 交叉编译(以mips为例)
+### 交叉编译(以`aarch64`为例)
 
 ```bash
 cargo install cross
-cross build --release --target mips-unknown-linux-musl
-mips-linux-gnu-strip ./target/mips-unknown-linux-musl/release/single_login
+cross build --release --target aarch64-unknown-linux-musl
+aarch64-linux-gnu-strip ./target/aarch64-unknown-linux-musl/release/single_login
 ```
 
 ------
@@ -95,5 +95,32 @@ sudo systemctl enable single_login
 sudo systemctl start single_login
 # 查看运行状态(请在启动后过一会再查看)
 sudo systemctl status single_login
+# 停止运行
+sudo systemctl stop single_login
+# 重启
+sudo systemctl restart single_login
+```
+
+------
+
+## Windows下设置自启动
+
+在`single_login`的文件夹里新建`single_login.bat`，替换里面的路径，将账号密码写入配置文件
+
+```bash
+@echo off
+if "%1" == "h" goto begin
+mshta vbscript:createobject("wscript.shell").run("""%~nx0"" h",0)(window.close)&&exit
+:begin
+REM
+cd C:\single_login # 替换成single_login的文件夹路径
+single_login account.cfg # account.cfg是配置文件
+exit
+```
+
+创建`single_login.bat`的快捷方式，放入下面的路径的文件夹里
+
+```powershell
+C:\Users\rhett\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 ```
 
