@@ -82,7 +82,7 @@ Type=simple
 Restart=always
 RestartSec=86400
 ExecStartPre=/bin/sleep 20
-ExecStart=~/single_login/single_login ~/single_login/account.cfg
+ExecStart=/home/min/single_login/target/release/single_login /home/min/single_login/target/release/account.cfg
 
 [Install]
 WantedBy=multi-user.target
@@ -99,6 +99,8 @@ sudo systemctl status single_login
 sudo systemctl stop single_login
 # 重启
 sudo systemctl restart single_login
+# 关闭自启动
+sudo systemctl disable single_login
 ```
 
 ------
