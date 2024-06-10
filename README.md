@@ -82,7 +82,7 @@ Type=simple
 Restart=always
 RestartSec=86400
 ExecStartPre=/bin/sleep 20
-ExecStart=/home/min/single_login/target/release/single_login /home/min/single_login/target/release/account.cfg
+ExecStart=/home/user_name/single_login/target/release/single_login /home/user_name/single_login/target/release/account.cfg
 
 [Install]
 WantedBy=multi-user.target
