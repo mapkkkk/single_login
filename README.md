@@ -81,7 +81,7 @@ Wants=network.target
 Type=simple
 Restart=always
 RestartSec=86400
-ExecStartPre=/bin/sleep 20
+ExecStartPre=/bin/sleep 5
 ExecStart=/home/user_name/single_login/target/release/single_login /home/user_name/single_login/target/release/account.cfg
 
 [Install]
