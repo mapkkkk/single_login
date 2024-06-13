@@ -109,7 +109,7 @@ fn main() {
         if is_work_time == true {
             match login(&username, &password) {
                 Ok(_) => {
-                    println!("[Info] Login OK");
+                    // println!("[Info] Login OK");
                     thread::sleep(Duration::from_secs(10));
                 }
                 Err(e) => {
@@ -119,7 +119,7 @@ fn main() {
             }
             // thread::sleep(Duration::from_secs(5));
         } else {
-            println!("[Warn] Not Work Time");
+            // println!("[Warn] Not Work Time");
             thread::sleep(Duration::from_secs(60));
         }
     }
