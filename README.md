@@ -50,6 +50,7 @@ echo 'export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup' >> 
 cargo build --release
 strip ./target/release/single_login
 # 如果是windows，请按照下面的命令操作
+cargo build --release
 strip .\target\release\single_login.exe
 ```
 
